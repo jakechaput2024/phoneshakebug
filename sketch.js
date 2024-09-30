@@ -6,25 +6,32 @@
 
 let rotationMode = true; // keep track of the mode
 
-let bgcolor = "orange"; // rotation mode has an orange background
+let img;
+let baby;
+let monster;
 
 // while there is a setShakeThreshold() function, it detects the *force* of the shake, not the duration
 let shakes = 0; // keep track of the number of shakes so we can switch modes only after a certain *duration*
 let mininumShakes = 40; // the minimum number of detected shakes before the mode switches (the duration of shaking)
 
+function preload() {
+    baby = loadImage('assets/ManeaterBaby.png');
+    monster = loadImage('assets/ManeaterCel01 copy.png');
+}
+
 function setup() {
-    createCanvas(windowWidth, windowHeight, WEBGL); // full screen canvas, 3D mode
+    createCanvas(1000, 1000, WEBGL); // full screen canvas, 3D mode
     setShakeThreshold(50); // set the shake-strength threshold to 50, the default is 30
 }
 
 function draw() {
-    background(bgcolor);
+    background(250);
 
     // rotate or move the box, depending on the mode
     if (rotationMode) rotateX(radians(rotationX));
     else translate(-accelerationX*4, 0);
     
-    box(200, 200, 200);
+    image(baby, -500, -500)
 }
 
 // this function is called when the phone is shaken beyond the setShakeThreshold value
@@ -34,10 +41,10 @@ function deviceShaken() {
 
     if (rotationMode) {
         rotationMode = false;
-        bgcolor = "orange";
+        img = "baby";
     } else {
         rotationMode = true;
-        bgcolor = "blue";
+        img = "monster";
     }
     shakes = 0; // reset the number of shakes for the next time shakes are detected
 }
