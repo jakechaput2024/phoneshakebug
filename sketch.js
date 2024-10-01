@@ -12,8 +12,8 @@ let mininumShakes = 5; // the minimum number of detected shakes before the mode 
 function preload() {
     baby = loadImage('assets/ManeaterBaby.png');
     monster = loadImage('assets/ManeaterCel01 copy.png');
-    soundBabyCrying = loadSound('assets/Babycry2.mp3')
-    soundMonsterCrying = loadSound('assets/Fakebabycry.mp3')
+    soundBabyCrying = loadSound('assets/Babycry2.mp3');
+    soundMonsterCrying = loadSound('assets/Fakebabycry.mp3');
 }
 
 function setup() {
@@ -33,7 +33,7 @@ function draw() {
 }
 
 // this function is called when the phone is shaken beyond the setShakeThreshold value
-function mouseClicked() {
+function deviceShaken() { //deviceShaken
    
     recentlyShaken = ! recentlyShaken;
     shakes = 0;
