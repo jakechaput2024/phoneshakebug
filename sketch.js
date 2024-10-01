@@ -32,14 +32,16 @@ function draw() {
         image(monster, 0, 0)
     } else {
         image(baby, 0, 0)
-        sound1.play();
+        
     }
 }
 
 // this function is called when the phone is shaken beyond the setShakeThreshold value
 function canvasPressed() { //deviceShaken
+    
     canvasPressed = ! canvasPressed; //deviceShaken = ! deviceShaken
     shakes = 0;
+    sound1.play();
 
 
 }
