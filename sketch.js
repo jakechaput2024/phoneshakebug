@@ -7,7 +7,7 @@ let i = 0; //index created
 
 // while there is a setShakeThreshold() function, it detects the *force* of the shake, not the duration
 let shakes = 0; // keep track of the number of shakes so we can switch modes only after a certain *duration*
-let mininumShakes = 30; // the minimum number of detected shakes before the mode switches (the duration of shaking)
+let mininumShakes = 15; // the minimum number of detected shakes before the mode switches (the duration of shaking)
 
 
 function preload() {
