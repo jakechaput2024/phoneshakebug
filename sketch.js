@@ -2,6 +2,7 @@ let recentlyShaken = false;
 let baby;
 let monster;
 let sounds = []; //empty array
+let i = 0; 
 
 // while there is a setShakeThreshold() function, it detects the *force* of the shake, not the duration
 let shakes = 0; // keep track of the number of shakes so we can switch modes only after a certain *duration*
@@ -42,7 +43,6 @@ function canvasPressed() { //deviceShaken
     
     canvasPressed = ! canvasPressed; //deviceShaken = ! deviceShaken
     shakes = 0;
-    sounds[1].play();
-    console.log(sounds[1])
+    i = (i+1) % 2
 
 }
