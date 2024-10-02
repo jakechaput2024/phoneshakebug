@@ -40,6 +40,11 @@ function deviceShaken() {
     recentlyShaken = ! recentlyShaken;
     shakes = 0;
     sounds[i = (i + 1) % 2].play();
+    if(sounds[0].isPlaying()){
+        sounds[1].isPaused();
+    } else {
+        sounds[0].isPaused
+    }
     //sound2.play();
 
     //if ( key != 0 && key != 1 && key != 2  && key !=3) return; //if the key isn't any one of these variables, jump out of function
