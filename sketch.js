@@ -35,7 +35,7 @@ function draw() {
 }
 
 // this function is called when the phone is shaken beyond the setShakeThreshold value
-function mouseClicked() {
+function deviceShaken() {
    
     recentlyShaken = ! recentlyShaken;
     shakes = 0;
