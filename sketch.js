@@ -1,8 +1,7 @@
 let recentlyShaken = false;
 let baby;
 let monster;
-let sound1;
-let sound2;
+let sounds = []; //empty array
 
 // while there is a setShakeThreshold() function, it detects the *force* of the shake, not the duration
 let shakes = 0; // keep track of the number of shakes so we can switch modes only after a certain *duration*
@@ -12,8 +11,8 @@ let mininumShakes = 5; // the minimum number of detected shakes before the mode 
 function preload() {
     baby = loadImage('assets/ManeaterBaby.png');
     monster = loadImage('assets/ManeaterCel01 copy.png');
-    sound1 = loadSound('assets/Babycry2.mp3');
-    sound2 = loadSound('assets/Fakebabycry.mp3');
+    sounds[0] = loadSound('assets/Babycry2.mp3');
+    sounds[1] = loadSound('assets/Fakebabyry.mp3')
 }
 
 function setup() {
@@ -30,9 +29,11 @@ function draw() {
 
     if(canvasPressed) { //deviceShaken
         image(monster, 0, 0)
+
     } else {
         image(baby, 0, 0)
-        
+
+
     }
 }
 
@@ -41,7 +42,7 @@ function canvasPressed() { //deviceShaken
     
     canvasPressed = ! canvasPressed; //deviceShaken = ! deviceShaken
     shakes = 0;
-    sound1.play();
-
+    sounds[1].play();
+    console.log(sounds[1])
 
 }
