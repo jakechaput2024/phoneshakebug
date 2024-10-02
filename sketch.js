@@ -27,7 +27,7 @@ function setup() {
 function draw() {
     background(250);
 
-    if(recentlyShaken) { //deviceShaken
+    if(deviceShaken) { //deviceShaken
         image(monster, 0, 0)
     } else {
         image(baby, 0, 0)
@@ -35,7 +35,7 @@ function draw() {
 }
 
 // this function is called when the phone is shaken beyond the setShakeThreshold value
-function deviceshaken() {
+function deviceShaken() {
    
     recentlyShaken = ! recentlyShaken;
     shakes = 0;
