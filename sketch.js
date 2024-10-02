@@ -12,8 +12,8 @@ let mininumShakes = 5; // the minimum number of detected shakes before the mode 
 function preload() {
     baby = loadImage('assets/ManeaterBaby.png');
     monster = loadImage('assets/ManeaterCel01 copy.png');
-    sounds[0] = loadSound('assets/Babycry2.mp3');
-    sounds[1] = loadSound('assets/Fakebabyry.mp3')
+    sounds[0] = loadSound('assets/sound1.mp3');
+    sounds[1] = loadSound('assets/sound2.mp3')
 }
 
 function setup() {
@@ -43,6 +43,6 @@ function canvasPressed() { //deviceShaken
     
     canvasPressed = ! canvasPressed; //deviceShaken = ! deviceShaken
     shakes = 0;
-    i = (i+1) % 2
+    i = (i+1) % 2 //percentage sign keeps it between 2 variables
 
 }
