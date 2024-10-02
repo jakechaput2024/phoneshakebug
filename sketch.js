@@ -2,7 +2,7 @@ let recentlyShaken = false;
 let baby;
 let monster;
 let sounds = []; //empty array
-let i = 0; 
+let i = 0; //index created
 
 // while there is a setShakeThreshold() function, it detects the *force* of the shake, not the duration
 let shakes = 0; // keep track of the number of shakes so we can switch modes only after a certain *duration*
@@ -16,33 +16,31 @@ function preload() {
     sounds[1] = loadSound('assets/sound2.mp3')
 }
 
+
 function setup() {
     createCanvas(1000, 1000);
     setShakeThreshold(50); // set the shake-strength threshold to 50, the default is 30
-    let cnv = createCanvas(1000, 1000);
-
-    cnv.mousePressed(canvasPressed);
-
 }
+
 
 function draw() {
     background(250);
 
-    if(canvasPressed) { //deviceShaken
+    if(recentlyShaken) { //deviceShaken
         image(monster, 0, 0)
-
     } else {
         image(baby, 0, 0)
-
-
     }
 }
 
 // this function is called when the phone is shaken beyond the setShakeThreshold value
-function canvasPressed() { //deviceShaken
+function mouseClicked(fxn) { //deviceShaken
     
-    canvasPressed = ! canvasPressed; //deviceShaken = ! deviceShaken
+    recentlyShaken = ! recentlyShaken; //deviceShaken = ! deviceShaken
     shakes = 0;
-    sound1.play();
+    //sound1.play();
+
+    //if ( key != 0 && key != 1 && key != 2  && key !=3) return; //if the key isn't any one of these variables, jump out of function
+    //index = key;
 
 }
