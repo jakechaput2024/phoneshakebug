@@ -43,6 +43,6 @@ function canvasPressed() { //deviceShaken
     
     canvasPressed = ! canvasPressed; //deviceShaken = ! deviceShaken
     shakes = 0;
-    i = (i+1) % 2 //percentage sign keeps it between 2 variables
+    sound1.play();
 
 }
