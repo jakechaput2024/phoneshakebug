@@ -27,7 +27,7 @@ function setup() {
 function draw() {
     background(250);
 
-    if(deviceShaken) { //deviceShaken
+    if(recentlyShaken) { //deviceShaken
         image(monster, 0, 0)
     } else {
         image(baby, 0, 0)
@@ -35,7 +35,7 @@ function draw() {
 }
 
 // this function is called when the phone is shaken beyond the setShakeThreshold value
-function deviceShaken() {
+function mouseClicked() {
    
     recentlyShaken = ! recentlyShaken;
     shakes = 0;
@@ -45,7 +45,7 @@ function deviceShaken() {
     } else {
         sounds[0].isPaused
     }
-    //sound2.play();
+
 
     //if ( key != 0 && key != 1 && key != 2  && key !=3) return; //if the key isn't any one of these variables, jump out of function
     //index = key;
