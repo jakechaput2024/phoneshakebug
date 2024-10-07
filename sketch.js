@@ -27,7 +27,7 @@ function setup() {
 function draw() {
     background(250);
 
-    if(recentlyShaken) { //deviceShaken
+    if(recentlyShaken) { //recentlyShaken
         image(monster, 0, 0)
     } else {
         image(baby, 0, 0)
